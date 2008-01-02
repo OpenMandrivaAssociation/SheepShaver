@@ -25,6 +25,7 @@ Patch0:		SheepShaver-2.2-stats.patch.bz2
 URL:		http://sheepshaver.gibix.net/
 License:	GPL
 Group:		Emulators
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libgtk+2.0-devel, esound-devel >= 0.2.8
 # Other arches need an instruction skipper on well-known invalid
 # memory references (e.g. illegal writes to ROM).
