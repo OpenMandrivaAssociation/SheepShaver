@@ -88,15 +88,15 @@ install -m 644 icons/mini/SheepShaver.png $RPM_BUILD_ROOT%{_miconsdir}/
 install -m 644 icons/large/SheepShaver.png $RPM_BUILD_ROOT%{_liconsdir}/
 
 # MDK menu
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat > $RPM_BUILD_ROOT%{_menudir}/%{name} << EOF
-?package(%{name}):\
-    command="%{_bindir}/%{name}"\
-    title="SheepShaver"\
-    section="Applications/Emulators"\
-    icon="%{name}.png"\
-    longtitle="A MacOS run-time environment"\
-    needs="x11"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_bindir}/%{name}
+Name=SheepShaver
+Categories=Emulator;
+Icon=%{name}
+Comment=A MacOS run-time environment
 EOF
 
 %post
@@ -113,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING NEWS doc/Linux
 %{_bindir}/SheepShaver
 %{_mandir}/man1/SheepShaver.1*
-%{_menudir}/SheepShaver
+%{_datadir}/applications/mandriva-SheepShaver.desktop
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/keycodes
 %{_datadir}/%{name}/tunconfig
