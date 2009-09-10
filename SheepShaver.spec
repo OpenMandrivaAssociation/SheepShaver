@@ -1,6 +1,6 @@
 %define name		SheepShaver
 %define version		2.3
-%define release		%mkrel 0.%{cvsdate}.1
+%define release		%mkrel 0.%{cvsdate}.2
 %define cvsdate		20051130
 %define mon_active	1
 %define mon_version	3.0
