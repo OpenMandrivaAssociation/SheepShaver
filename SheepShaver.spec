@@ -22,7 +22,7 @@ Source0:	%{name}-%{version}%{?cvsdate:-%{cvsdate}}.tar.bz2
 Source1:	SheepShaver-icons.tar.bz2
 Source2:	cxmon-%{mon_version}-%{mon_snapshot}.tar.bz2
 Patch0:		SheepShaver-2.2-stats.patch.bz2
-URL:		http://sheepshaver.gibix.net/
+URL:		https://sheepshaver.gibix.net/
 License:	GPL
 Group:		Emulators
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
